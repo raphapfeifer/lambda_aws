@@ -13,7 +13,6 @@ jobs:
       - name: Generate Zip
         run: |
           zip deployment.zip *.py
-      #- name: default deploy
       - name: Configure AWS credentials
         #uses: appleboy/lambda-action@master
         uses: aws-actions/configure-aws-credentials@v4
