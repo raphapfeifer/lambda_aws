@@ -5,5 +5,8 @@ def lambda_handler(event, context):
     print_log(event)
     return {
         'statusCode': 200,
-        'body': json.dumps(event)
+        'body': f'<html><body>Requests Data {json.dumps(event)}<body><html>',
+        'headers': {
+            'content-type': 'text/html'
+        }
     }
