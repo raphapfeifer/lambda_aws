@@ -7,9 +7,9 @@ s3_client = boto3.client('s3')
 
 def lambda_handler(event, context):
     
-    record = event.Records[0]
-    bucket = record.s3.bucket.name
-    key = record.s3.object.key
+    record = event['Records'][0]
+    bucket = record['s3']['bucket']['name']
+    key = record['s3']['object']['key']
 
     response = s3_client.get_object(Bucket=bucket, Key=key)
     size_in_bytes = response['ContentLength']
