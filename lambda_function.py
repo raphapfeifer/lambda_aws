@@ -15,11 +15,11 @@ def lambda_handler(event, context):
     size_in_bytes = response['ContentLength']
     mega_byte = 1024 * 1024
 
-    print("Lambda triggered")
     if size_in_bytes > mega_byte:
         print('The object is too large!')
         return 'The object is too large!'
 
+    print('The object is ok!')
     return 'The object is ok!'
     #return {
     #    'statusCode': 200,
